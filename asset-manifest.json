@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/StarWarsSearch/static/css/main.cb3b0516.chunk.css",
-    "main.js": "/StarWarsSearch/static/js/main.e62cb417.chunk.js",
-    "main.js.map": "/StarWarsSearch/static/js/main.e62cb417.chunk.js.map",
+    "main.js": "/StarWarsSearch/static/js/main.97ce0d52.chunk.js",
+    "main.js.map": "/StarWarsSearch/static/js/main.97ce0d52.chunk.js.map",
     "runtime~main.js": "/StarWarsSearch/static/js/runtime~main.2be164a3.js",
     "runtime~main.js.map": "/StarWarsSearch/static/js/runtime~main.2be164a3.js.map",
-    "static/js/2.4c0f75d4.chunk.js": "/StarWarsSearch/static/js/2.4c0f75d4.chunk.js",
-    "static/js/2.4c0f75d4.chunk.js.map": "/StarWarsSearch/static/js/2.4c0f75d4.chunk.js.map",
+    "static/js/2.65aa1cca.chunk.js": "/StarWarsSearch/static/js/2.65aa1cca.chunk.js",
+    "static/js/2.65aa1cca.chunk.js.map": "/StarWarsSearch/static/js/2.65aa1cca.chunk.js.map",
     "index.html": "/StarWarsSearch/index.html",
-    "precache-manifest.0c791ffeccb6ec24d9b3748236fbb316.js": "/StarWarsSearch/precache-manifest.0c791ffeccb6ec24d9b3748236fbb316.js",
+    "precache-manifest.b076cb44cb5b2a3cadb6357fbc1f76aa.js": "/StarWarsSearch/precache-manifest.b076cb44cb5b2a3cadb6357fbc1f76aa.js",
     "service-worker.js": "/StarWarsSearch/service-worker.js",
     "static/css/main.cb3b0516.chunk.css.map": "/StarWarsSearch/static/css/main.cb3b0516.chunk.css.map",
     "static/media/App.css": "/StarWarsSearch/static/media/Starjedi.cc3019aa.ttf"
