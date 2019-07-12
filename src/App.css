@@ -1,3 +1,10 @@
+@font-face{
+  font-family:StarJedi;
+  src: url(./assets/Starjedi.ttf);
+}
+
+
+
 .App {
   text-align: center;
   border: 1px black solid;
@@ -5,27 +12,63 @@
   justify-content: center;
   align-items: center;
   flex-direction:column;
+
+}
+
+
+.header{
+  font: 55px;
+  color:gold;
+  font-family: "StarJedi";
+   letter-spacing:10px;
 }
 .cardContainer{
   display:flex;
   flex-wrap: wrap;
   flex-direction:row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
-  border :2px purple solid;
   min-width:450px;
+  font-family: 'Poller One', cursive;
 }
 .card{
   margin:10px;
-  border:2px blue solid;
+  border:5px gold solid;
+  border-radius:15px;
+  background:white;
+ 
 }
 .card:hover{
-  transition:all 1s ease;
-  transform: scale(1.1);
+  transition:all 1.5s ease;
+  transform: scale(1.05);
 }
-.card>img{
+.card>.image0{
   max-width:250px ;
   max-height:350px;
+  background-image:url(https://live.staticflickr.com/1538/23961525293_2d5408d29f_b.jpg);
+  background-size:cover;
+  border:black solid 2px; 
+  border-radius:15px;
+  margin:10px;
+}
+.card>.image1{
+  max-width:250px ;
+  max-height:350px;
+  background-image:url(https://www.fiz-x.com/wp-content/uploads/2012/04/10.-Forest-Moon-of-Endor.jpg);
+  background-size:cover;
+  border:black solid 2px; 
+  border-radius:15px;
+  margin:10px;
+}
+
+.card>.image2{
+  max-width:250px ;
+  max-height:350px;
+  background-image:url(https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/Death_star1.png/220px-Death_star1.png);
+  background-size:cover;
+  border:black solid 2px; 
+  border-radius:15px;
+  margin:10px;
 }
 .card>h1{
   font-size:16px
@@ -36,6 +79,19 @@
 .card>h3{
   font-size:10px;
 }
+
+.searchDiv{
+  color:gold;
+  font-family:'StarJedi'
+}
+
+input{
+  min-width:250px;
+  min-height:25px;
+  font-family:'StarJedi';
+  font-size:24px;
+}
+
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -57,7 +113,7 @@
 .App-link {
   color: #61dafb;
 }
-h1{
+.h1Card{
   text-decoration:underline;
 }
 
