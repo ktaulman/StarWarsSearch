@@ -1,14 +1,21 @@
 import React from 'react';
 import './App.css';
+import { execFile } from 'child_process';
 
 const SearchBox=(props)=>{
   return(
     <div className="searchDiv">
-      <label>Search for Robots:</label>
-      <div><input onChange={props.onChange}/></div>
+      <label>Press Enter to Search:</label>
+      <div>
+        <input 
+          onKeyUp={props.onKeyUp}
+          onKeyDown={props.onKeyDown}
+        />
+      </div>
     </div>
   )
 }
+
 
 const Card=(props)=>{
   
@@ -29,12 +36,12 @@ const Card=(props)=>{
 
 
 
-const CardList=({jedi,background})=>{
-  const cardComponent= jedi.map((el,i)=>{
-     return( 
+const CardList=({jedi})=>{
+    const cardComponent= jedi.map((el,i)=>{
+    return( 
      <Card 
         image={el.url.replace(/[^/0-9]/g,'')}
-        background={`${background[Math.floor(Math.random()*background.length)]}`}
+        background={el.background}
         key={i}
         name={el.name}
         height={el.height}
@@ -56,39 +63,47 @@ constructor(){
      this.state={
       jedi:[],
       searchName:'',
-      background:["image0","image1","image2"]
+      backgrounds:["image0","image1","image2"],
+      showMenu:false,
     }
 }
 
-onSearchChange=(event)=>{
-  this.setState({searchName:event.target.value})
+handleEnter=(event)=>{
+  if(event.keyCode===13){
+    this.setState({searchName:event.target.value})
+ }
+
+}
+handleBackspace=(event)=>{
+  if(event.keyCode===8){
+    this.setState({searchName:event.target.value})
+  }
+ 
 }
 
 
 componentDidMount(){
-    fetch("https://swapi.co/api/people/")
+    //Fetch API Data
+      fetch("https://swapi.co/api/people/")
       .then(response=>response.json())
-      .then(data=>this.setState({jedi:data.results}))   
+      .then(data=>this.setState({jedi:data.results}))
+    //Assign Random Backgrounds to jedi
 }
 
-
   render(){ 
-      let jedi=this.state.jedi;
-      let searchName=this.state.searchName;
-      let background=this.state.background;
-      
-
+      console.log('searchName in render() '+this.state.searchName)
+      let {jedi,searchName}=this.state;
+    
       let filteredJedi=jedi.filter(char=>{
-          return char.name.toLowerCase().includes(searchName.toLowerCase())
+         return char.name.toLowerCase().includes(searchName.toLowerCase())
       });
-
-
+  
      return(
          <div className="App">
           <h1 className="header">Robots from Star Wars
           </h1>
-          <SearchBox onChange={this.onSearchChange}/>
-          <CardList jedi={filteredJedi} background={background}/>
+          <SearchBox onKeyDown={this.handleEnter} onKeyUp={this.handleBackspace}/>
+          <CardList jedi={filteredJedi}/>
         </div>
    
     )
