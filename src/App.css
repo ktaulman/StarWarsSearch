@@ -2,9 +2,33 @@
   font-family:StarJedi;
   src: url(./assets/Starjedi.ttf);
 }
-
-
-
+@keyframes slideintop{
+  from{
+    margin-top:300%;
+    width:100%;
+  }
+  to{
+    margin-top:0%;
+    width:100%;
+  }
+}
+@keyframes fadein{
+  from{
+    opacity:0
+  }
+  to{
+    opactiy:1
+  }
+}
+@keyframes blink{
+  50% {border:6px gold dashed;} 
+}
+.loading{
+  color:gold;
+  font-size:75px;
+  animation:fadein 0.75s infinite;
+  text-align:center
+}
 .App {
   text-align: center;
   border: 1px black solid;
@@ -12,7 +36,7 @@
   justify-content: center;
   align-items: center;
   flex-direction:column;
-
+  animation:3s slideintop;
 }
 
 
@@ -36,12 +60,16 @@
   border:5px gold solid;
   border-radius:15px;
   background:white;
- 
+  animation:3s fadein ease-in;
 }
 .card:hover{
+  animation: blink .3s step-end infinite alternate;
   transition:all 1.5s ease;
   transform: scale(1.05);
+  
 }
+
+
 .card>.image0{
   max-width:250px ;
   max-height:350px;

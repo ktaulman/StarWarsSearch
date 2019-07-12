@@ -99,8 +99,10 @@ componentDidMount(){
       });
   
      return(
+       !jedi.length?
+        <p className="loading">Loading....</p>:
          <div className="App">
-          <h1 className="header">Robots from Star Wars
+         <h1 className="header">Robots from Star Wars
           </h1>
           <SearchBox onKeyDown={this.handleEnter} onKeyUp={this.handleBackspace}/>
           <CardList jedi={filteredJedi}/>
